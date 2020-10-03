@@ -18,7 +18,7 @@ RUN dbus-uuidgen > /etc/machine-id && \
  git clone https://github.com/qarmin/czkawka.git /czkawka && cd /czkawka && \
  useradd -u 1000 -U -d /data -s /bin/false czkawka && \
  usermod -G users czkawka && \
- mkdir /data && \
+ mkdir /data 
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8 \
