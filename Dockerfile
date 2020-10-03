@@ -1,5 +1,6 @@
 FROM ubuntu:bionic
 ENV TZ=Europe/London
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && \
  apt-get install -y libgtk-3-dev binutils ca-certificates curl dbus libssl1.0-dev locales openbox patch supervisor x11vnc xvfb --no-install-recommends && \
  dbus-uuidgen > /etc/machine-id && \
