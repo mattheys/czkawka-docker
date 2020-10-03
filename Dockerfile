@@ -28,5 +28,5 @@ COPY ui.patch /tmp
 COPY etc /etc
 COPY usr /usr
 COPY supervisord.conf /etc/supervisord.conf
-RUN chown czkawka:czkawka /init.sh && chmod +x /init.sh && chown czkawka:czkawka /data
+RUN chown czkawka:czkawka /init.sh && chmod +x /init.sh && chown czkawka:czkawka /data && chown czkawka:czkawka /czkawka
 ENTRYPOINT ["/init.sh"]
