@@ -19,9 +19,6 @@ RUN dbus-uuidgen > /etc/machine-id && \
  useradd -u 1000 -U -d /data -s /bin/false czkawka && \
  usermod -G users czkawka && \
  mkdir /data && \
- apt-get purge -y binutils curl dbus patch && \
- apt-get autoremove -y && \
- rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US:en \
     LC_ALL=en_US.UTF-8 \
