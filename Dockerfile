@@ -2,7 +2,7 @@ FROM ubuntu:bionic
 ENV TZ=Europe/London
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && \
- apt-get install -y libgtk-3-dev git binutils ca-certificates curl dbus libssl1.0-dev locales openbox patch supervisor x11vnc xvfb --no-install-recommends
+ apt-get install -y libgtk-3-dev git cargo binutils ca-certificates curl dbus libssl1.0-dev locales openbox patch supervisor x11vnc xvfb --no-install-recommends
 RUN dbus-uuidgen > /etc/machine-id && \
  locale-gen en_US.UTF-8 && \
  mkdir /usr/share/novnc && \
