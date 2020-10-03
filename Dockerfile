@@ -27,6 +27,9 @@ ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     XDG_RUNTIME_DIR=/data
 COPY init.sh /init.sh
+COPY ui.patch /tmp
+COPY etc /etc
+COPY usr /usr
 COPY supervisord.conf /etc/supervisord.conf
 RUN chown czkawka:czkawka /init.sh && chmod +x /init.sh
 ENTRYPOINT ["/init.sh"]
