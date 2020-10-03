@@ -1,4 +1,5 @@
 FROM ubuntu:bionic
+ENV TZ=Europe/London
 RUN apt-get update && \
  apt-get install -y libgtk-3-dev binutils ca-certificates curl dbus libssl1.0-dev locales openbox patch supervisor x11vnc xvfb --no-install-recommends && \
  dbus-uuidgen > /etc/machine-id && \
@@ -26,4 +27,5 @@ ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     XDG_RUNTIME_DIR=/data
 COPY init.sh /init.sh
+COPY supervisord.conf /etc/supervisord.conf
 ENTRYPOINT ["/init.sh"]
